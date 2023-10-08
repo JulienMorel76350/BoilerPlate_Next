@@ -1,12 +1,13 @@
-export interface PokemonResponse {
+export interface PokemonSpecies {
+  name: string;
+  url: string;
 }
 
 export interface Pokemon {
   name: string;
-  picture: string;
-  type: string; 
+  imageUrl: string;
 }
 
-export interface responsePokemon<T> {
-  data: T;
+export interface GenerationData {
+  pokemon_species: PokemonSpecies[];
 }

@@ -11,8 +11,7 @@ const Item = styled.div`
   border-radius: 8px;
   background-color: #fff;
   padding: 20px;
-  height: 200px;
-  width: 400px;
+  flex-direction: column;
 `;
 const ItemTitle = styled.div`
   font-size: 18px;
@@ -26,18 +25,18 @@ const ItemPicture = styled.img`
   width: 100%;
 `;
 
-
 interface CardProps {
-  Cards: Pokemon;
+  pokemon: Pokemon;
 }
-export const Card: React.FC<CardProps> = ({ Cards }: CardProps) => {
+
+export const Card: React.FC<CardProps> = ({ pokemon }) => {
   return (
     <Wrapping>
       <Item>
+        <ItemTitle>{pokemon.name}</ItemTitle>
         <ItemPictureContainer>
-          <ItemPicture src=""></ItemPicture>
+          <ItemPicture src={pokemon.imageUrl} alt={pokemon.name} />
         </ItemPictureContainer>
-        <ItemTitle>{Cards.name}</ItemTitle>
       </Item>
     </Wrapping>
   );
